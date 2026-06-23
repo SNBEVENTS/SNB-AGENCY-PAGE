@@ -3,7 +3,6 @@ import Link from "next/link";
 const links = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {
@@ -29,7 +28,7 @@ export default function Nav() {
           ))}
           <Link
             href="/contact"
-            className="text-[11px] font-semibold text-gold tracking-[0.2em] uppercase hover:text-gold-light transition-colors"
+            className="text-[11px] font-semibold text-[#f72585] tracking-[0.2em] uppercase hover:opacity-75 transition-opacity"
           >
             Get in Touch →
           </Link>
