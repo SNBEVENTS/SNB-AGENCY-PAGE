@@ -69,16 +69,16 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <p className="text-[11px] font-semibold text-gold-light tracking-[0.4em] uppercase mb-6">
-            Barcelona · Ibiza · Worldwide
+            Barcelona · Ibiza · All of Spain
           </p>
-          <h1 className="font-heading text-[clamp(3.5rem,9vw,8.5rem)] text-surface leading-[0.92] tracking-tight mb-8">
-            We Make the<br />
-            Coolest<br />
-            <em>Corporate Events</em>
+          <h1 className="font-heading text-[clamp(3rem,8vw,7.5rem)] text-surface leading-[0.95] tracking-tight mb-8">
+            Your Event.<br />
+            Our Expertise.<br />
+            <em>Zero Stress.</em>
           </h1>
           <p className="text-base md:text-lg text-surface/75 max-w-xl leading-relaxed mb-10">
-            Everything from A to Z — venues, logistics, suppliers, on-the-day production.
-            We know everyone worth knowing and handle every last detail so you can just show up.
+            We bring your corporate vision to life, every time. From A to Z — venues, logistics,
+            suppliers, on-the-day production. You bring the people. We bring everything else.
           </p>
           <div className="flex flex-wrap items-center gap-8 md:gap-12">
             <Link

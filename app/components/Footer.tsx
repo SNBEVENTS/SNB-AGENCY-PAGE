@@ -10,7 +10,7 @@ export default function Footer() {
               SNB Events Agency
             </div>
             <p className="text-sm text-muted leading-relaxed max-w-sm mb-8">
-              We design, produce, and execute high-end corporate events that drive real business impact. Based in Barcelona, working worldwide.
+              We design, produce, and execute high-end corporate events that drive real business impact. Based in Barcelona, working across Spain and beyond.
             </p>
             <a
               href="mailto:info@strawsnberries.com"
@@ -74,7 +74,7 @@ export default function Footer() {
             © 2026 SNB Events Agency. All rights reserved.
           </p>
           <p className="text-[10px] text-muted tracking-[0.25em] uppercase">
-            Corporate Event Agency · Barcelona
+            Corporate Events · Barcelona & All of Spain
           </p>
         </div>
       </div>
