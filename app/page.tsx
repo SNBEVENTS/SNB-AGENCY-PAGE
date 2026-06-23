@@ -2,35 +2,45 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Corporate Offsites",
+    n: "01",
+    title: "Corporate Offsites & Retreats",
     desc: "Purposeful off-site experiences that align teams and accelerate strategy.",
   },
   {
-    title: "Brand Launches",
+    n: "02",
+    title: "Brand Activations",
     desc: "High-impact launch events that put your brand in the spotlight.",
   },
   {
-    title: "Retreats & Team Experiences",
-    desc: "Curated retreats that invest in your people and culture.",
+    n: "03",
+    title: "Team Building & Experiences",
+    desc: "Structured activities and shared experiences that build culture.",
   },
   {
-    title: "Event Production",
-    desc: "Full-scale technical production from concept to close.",
+    n: "04",
+    title: "Corporate & Company Events",
+    desc: "Summer parties, end-of-year nights, and company socials — expertly organised.",
   },
 ];
 
-const pillars = [
+const work = [
   {
-    label: "Experienced",
-    desc: "Years of high-stakes corporate event delivery across industries.",
+    src: "/gallery-outdoor.jpg",
+    position: "object-[center_60%]",
+    cat: "COMPANY EVENT",
+    title: "Summer Garden Party, Barcelona",
   },
   {
-    label: "Detail-Obsessed",
-    desc: "No element is too small. Every decision is intentional.",
+    src: "/brand-activation.jpg",
+    position: "object-center",
+    cat: "BRAND ACTIVATION",
+    title: "Brand Activation, Barcelona",
   },
   {
-    label: "Results-Driven",
-    desc: "We measure success in business outcomes, not just applause.",
+    src: "/team-building.jpg",
+    position: "object-top",
+    cat: "TEAM BUILDING",
+    title: "Activity Day, Ibiza",
   },
 ];
 
@@ -38,57 +48,87 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-[92vh] flex items-center px-6 py-32">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="max-w-4xl">
-            <div className="w-12 h-px bg-gold mb-10" />
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-parchment leading-[1.05] tracking-tight mb-8">
-              We Build Moments<br />That Move Business
-            </h1>
-            <p className="text-lg md:text-xl text-muted max-w-2xl leading-relaxed mb-12">
-              SNB Events designs, produces, and executes high-end corporate events — from intimate leadership offsites to large-scale brand activations.
-            </p>
+      <section className="h-screen flex items-end pb-16 md:pb-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/Hero.jpg"
+            alt=""
+            className="w-full h-full object-cover object-center"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-ink/55" />
+        </div>
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <p className="text-[11px] font-semibold text-gold-light tracking-[0.4em] uppercase mb-6">
+            Barcelona · Ibiza · Worldwide
+          </p>
+          <h1 className="font-heading text-[clamp(3.5rem,9vw,8.5rem)] text-surface leading-[0.92] tracking-tight mb-10">
+            Corporate<br />
+            <em>Events</em><br />
+            That Move<br />
+            Business
+          </h1>
+          <div className="flex flex-wrap items-center gap-8 md:gap-12">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-gold text-ink px-9 py-4 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-gold-light transition-colors"
+              className="text-[11px] font-semibold text-surface tracking-[0.3em] uppercase border-b border-gold pb-1 hover:text-gold transition-colors"
             >
-              Get in Touch <span aria-hidden>→</span>
+              Start a Conversation →
+            </Link>
+            <Link
+              href="/services"
+              className="text-[11px] font-semibold text-surface/60 tracking-[0.3em] uppercase hover:text-surface transition-colors"
+            >
+              Our Services
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Services preview */}
-      <section className="py-28 px-6 bg-ink-raised border-y border-ink-border">
+      {/* Intro statement */}
+      <section className="py-24 md:py-32 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="w-8 h-px bg-gold mb-12" />
+          <p className="font-heading text-2xl md:text-4xl text-parchment leading-[1.35] max-w-4xl">
+            We design, produce, and execute high-end corporate events — from intimate leadership
+            offsites to large-scale brand activations. Every event starts with a brief and ends
+            with a result.
+          </p>
+        </div>
+      </section>
+
+      {/* What we do */}
+      <section className="px-6 border-y border-ink-border">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <p className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-4">
+          <div className="py-10 border-b border-ink-border">
+            <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase">
               What We Do
             </p>
-            <h2 className="font-heading text-3xl md:text-5xl text-parchment">
-              End-to-End Event Expertise
-            </h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink-border">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-ink-raised p-8 group hover:bg-ink transition-colors"
-              >
-                <div className="w-8 h-px bg-gold mb-7 group-hover:w-14 transition-all duration-300" />
-                <h3 className="font-heading text-xl text-parchment mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-muted leading-relaxed">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10">
+          {services.map((s) => (
+            <Link
+              key={s.n}
+              href="/services"
+              className="flex items-start md:items-center gap-6 md:gap-16 py-9 group border-b border-ink-border hover:bg-ink-raised transition-colors duration-200 px-2 -mx-2"
+            >
+              <span className="text-[11px] text-gold font-semibold tracking-widest flex-shrink-0 mt-1.5 md:mt-0 w-8">
+                {s.n}
+              </span>
+              <h2 className="font-heading text-xl md:text-3xl text-parchment flex-1">
+                {s.title}
+              </h2>
+              <p className="hidden md:block text-sm text-muted max-w-xs leading-relaxed flex-shrink-0">
+                {s.desc}
+              </p>
+              <span className="text-muted group-hover:text-gold transition-colors flex-shrink-0 text-lg">
+                →
+              </span>
+            </Link>
+          ))}
+          <div className="py-8">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-xs text-gold tracking-[0.2em] uppercase hover:text-gold-light transition-colors border-b border-gold pb-1"
+              className="text-[11px] font-semibold text-gold tracking-[0.25em] uppercase hover:text-gold-light transition-colors"
             >
               Explore All Services →
             </Link>
@@ -96,56 +136,122 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Full-bleed photo */}
+      <div className="w-full h-[55vh] md:h-[75vh] overflow-hidden">
+        <img
+          src="/gallery-outdoor.jpg"
+          alt="SNB Events Agency outdoor event setup"
+          className="w-full h-full object-cover object-[center_60%]"
+        />
+      </div>
+
       {/* Why SNB */}
-      <section className="py-28 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div>
-            <p className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-5">
-              Why SNB Events
+      <section className="py-24 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+          <div className="md:sticky md:top-32">
+            <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-8">
+              Why SNB Events Agency
             </p>
-            <h2 className="font-heading text-3xl md:text-5xl text-parchment leading-snug mb-7">
-              Precision, Craft, and Relentless Attention to Detail
+            <h2 className="font-heading text-3xl md:text-5xl text-parchment leading-[1.1] mb-8">
+              Precision, Craft,<br />and Relentless<br />Attention to Detail
             </h2>
             <p className="text-muted leading-relaxed mb-5">
-              We don't do generic. Every event we touch is conceived with clear business intent and executed with the precision it deserves.
+              Every event we work on starts with a conversation. We take time to understand what
+              you need, what success looks like, and how to make it happen.
             </p>
-            <p className="text-muted leading-relaxed">
-              Our clients are brands and businesses that understand the value of a perfectly executed experience — and trust us to deliver it.
+            <p className="text-muted leading-relaxed mb-10">
+              Our clients are brands and businesses who want an agency they can genuinely rely on —
+              straightforward to work with, invested in your event, and there every step of the way.
             </p>
+            <Link
+              href="/about"
+              className="text-[11px] font-semibold text-gold tracking-[0.25em] uppercase border-b border-gold pb-1 hover:text-gold-light hover:border-gold-light transition-colors"
+            >
+              About Us →
+            </Link>
           </div>
 
-          <div className="space-y-4">
-            {pillars.map((item) => (
-              <div
-                key={item.label}
-                className="flex gap-6 p-7 border border-ink-border hover:border-gold transition-colors duration-300 group"
-              >
-                <div className="w-px bg-gold flex-shrink-0 group-hover:bg-gold-light transition-colors" />
-                <div>
-                  <div className="font-heading text-lg text-parchment mb-2">
-                    {item.label}
-                  </div>
-                  <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
-                </div>
+          <div className="divide-y divide-ink-border border-y border-ink-border">
+            {[
+              {
+                label: "Experienced & Multilingual",
+                desc: "Years of high-stakes event delivery across industries and languages. Our multilingual team works seamlessly with international clients and cross-border briefs.",
+              },
+              {
+                label: "Detail-Obsessed & Flexible",
+                desc: "No element is too small. Every decision is intentional. When things shift — as they always do — we adapt without losing grip on what matters.",
+              },
+              {
+                label: "Results-Driven & Quick to Respond",
+                desc: "We measure success in business outcomes, not just applause. Expect fast, clear communication from first enquiry to final delivery.",
+              },
+            ].map((item) => (
+              <div key={item.label} className="py-10">
+                <h3 className="font-heading text-xl text-parchment mb-4">{item.label}</h3>
+                <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-28 px-6 bg-ink-raised border-t border-ink-border">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="w-12 h-px bg-gold mx-auto mb-10" />
-          <h2 className="font-heading text-3xl md:text-5xl text-parchment mb-7">
+      {/* Featured work */}
+      <section className="py-24 md:py-32 px-6 border-t border-ink-border bg-ink-raised">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-14">
+            <div>
+              <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-4">
+                Featured Work
+              </p>
+              <h2 className="font-heading text-3xl md:text-5xl text-parchment">Our Events</h2>
+            </div>
+            <Link
+              href="/services"
+              className="hidden md:inline text-[11px] font-semibold text-gold tracking-[0.25em] uppercase hover:text-gold-light transition-colors"
+            >
+              All Services →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {work.map((item) => (
+              <div key={item.src} className="group cursor-pointer">
+                <div className="overflow-hidden aspect-[3/4] mb-5">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className={`w-full h-full object-cover ${item.position} group-hover:scale-105 transition-transform duration-700`}
+                  />
+                </div>
+                <p className="text-[10px] font-semibold text-gold tracking-[0.3em] uppercase mb-1.5">
+                  {item.cat}
+                </p>
+                <p className="font-heading text-lg text-parchment">{item.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-36 md:py-48 px-6 bg-ink relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/Hero.jpg"
+            alt=""
+            className="w-full h-full object-cover opacity-15"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <p className="text-[11px] font-semibold text-gold tracking-[0.4em] uppercase mb-8">
+            Let&apos;s Work Together
+          </p>
+          <h2 className="font-heading text-[clamp(2.5rem,7vw,7rem)] text-surface leading-[0.95] tracking-tight mb-14 max-w-3xl">
             Ready to Plan Your Next Event?
           </h2>
-          <p className="text-muted mb-12 text-lg leading-relaxed">
-            Tell us about your brief and let's build something extraordinary together.
-          </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 border border-gold text-gold px-9 py-4 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-gold hover:text-ink transition-colors"
+            className="inline-flex items-center gap-3 text-[11px] font-semibold text-surface tracking-[0.3em] uppercase border-b border-gold pb-1 hover:text-gold transition-colors"
           >
             Start a Conversation →
           </Link>

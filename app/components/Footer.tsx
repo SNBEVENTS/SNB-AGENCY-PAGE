@@ -1,32 +1,36 @@
 import Link from "next/link";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
-];
-
 export default function Footer() {
   return (
-    <footer className="bg-ink-raised border-t border-ink-border">
+    <footer className="bg-surface border-t border-ink-border">
       <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
-          <div>
-            <div className="font-heading text-lg font-semibold text-parchment tracking-[0.2em] uppercase mb-5">
-              SNB Events
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-20">
+          <div className="md:col-span-2">
+            <div className="font-heading text-xl text-parchment tracking-[0.2em] uppercase mb-5">
+              SNB Events Agency
             </div>
-            <p className="text-sm text-muted leading-relaxed max-w-xs">
-              We design, produce, and execute high-end corporate events that drive real business impact.
+            <p className="text-sm text-muted leading-relaxed max-w-sm mb-8">
+              We design, produce, and execute high-end corporate events that drive real business impact. Based in Barcelona, working worldwide.
             </p>
+            <a
+              href="mailto:info@strawsnberries.com"
+              className="text-[11px] font-semibold text-gold tracking-[0.2em] uppercase hover:text-gold-light transition-colors"
+            >
+              info@strawsnberries.com
+            </a>
           </div>
 
           <div>
-            <div className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-6">
+            <div className="text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-6">
               Navigation
             </div>
             <ul className="space-y-3">
-              {navLinks.map((link) => (
+              {[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Services", href: "/services" },
+                { label: "Contact", href: "/contact" },
+              ].map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -40,10 +44,19 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-6">
+            <div className="text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-6">
               Contact
             </div>
             <ul className="space-y-3 text-sm text-muted">
+              <li>Barcelona, Spain</li>
+              <li>
+                <a
+                  href="https://wa.me/34936096253"
+                  className="hover:text-parchment transition-colors"
+                >
+                  +34 936 096 253
+                </a>
+              </li>
               <li>
                 <a
                   href="mailto:info@strawsnberries.com"
@@ -52,17 +65,16 @@ export default function Footer() {
                   info@strawsnberries.com
                 </a>
               </li>
-              <li>London, United Kingdom</li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-ink-border mt-16 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="border-t border-ink-border pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-xs text-muted">
-            © 2026 SNB Events. All rights reserved.
+            © 2026 SNB Events Agency. All rights reserved.
           </p>
-          <p className="text-xs text-muted tracking-widest uppercase">
-            Corporate Event Agency
+          <p className="text-[10px] text-muted tracking-[0.25em] uppercase">
+            Corporate Event Agency · Barcelona
           </p>
         </div>
       </div>

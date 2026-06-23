@@ -3,15 +3,15 @@
 import { useState } from "react";
 
 const EVENT_TYPES = [
-  "Corporate Offsite",
-  "Brand Launch & Activation",
-  "Retreat & Team Experience",
-  "Event Production",
+  "Corporate Offsite & Retreat",
+  "Brand Activation",
+  "Team Building & Experience",
+  "Corporate & Company Event",
   "Other",
 ];
 
 const inputClass =
-  "w-full bg-ink border border-ink-border px-4 py-3.5 text-sm text-parchment placeholder:text-muted focus:outline-none focus:border-gold transition-colors";
+  "w-full bg-surface border border-ink-border px-4 py-3.5 text-sm text-parchment placeholder:text-muted focus:outline-none focus:border-gold transition-colors";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,6 +20,7 @@ export default function ContactForm() {
     company: "",
     email: "",
     eventType: "",
+    eventDate: "",
     message: "",
   });
 
@@ -54,7 +55,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-2.5">
+          <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
             Name
           </label>
           <input
@@ -68,7 +69,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-2.5">
+          <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
             Company
           </label>
           <input
@@ -84,7 +85,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-2.5">
+        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
           Email
         </label>
         <input
@@ -99,7 +100,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-2.5">
+        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
           Event Type
         </label>
         <select
@@ -121,7 +122,20 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-2.5">
+        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
+          Event Date
+        </label>
+        <input
+          type="date"
+          name="eventDate"
+          value={form.eventDate}
+          onChange={handleChange}
+          className={inputClass}
+        />
+      </div>
+
+      <div>
+        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
           Message
         </label>
         <textarea
@@ -137,7 +151,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center gap-3 bg-gold text-ink px-9 py-4 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-gold-light transition-colors"
+        className="inline-flex items-center gap-3 bg-parchment text-surface px-9 py-4 text-[11px] font-semibold tracking-[0.25em] uppercase hover:opacity-80 transition-opacity"
       >
         Send Enquiry →
       </button>

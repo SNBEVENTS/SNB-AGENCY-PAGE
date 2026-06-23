@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const links = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
@@ -9,13 +8,13 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 bg-ink border-b border-ink-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-ink-border">
       <nav className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link
           href="/"
-          className="font-heading text-lg font-semibold text-parchment tracking-[0.2em] uppercase"
+          className="font-heading text-base text-parchment tracking-[0.25em] uppercase"
         >
-          SNB Events
+          SNB Events Agency
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
@@ -23,19 +22,18 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold text-muted hover:text-parchment transition-colors tracking-[0.15em] uppercase"
+              className="text-[11px] font-semibold text-muted hover:text-parchment transition-colors tracking-[0.2em] uppercase"
             >
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            className="text-[11px] font-semibold text-gold tracking-[0.2em] uppercase hover:text-gold-light transition-colors"
+          >
+            Get in Touch →
+          </Link>
         </div>
-
-        <Link
-          href="/contact"
-          className="hidden md:inline-flex items-center gap-2 border border-gold text-gold px-6 py-2.5 text-xs font-semibold tracking-[0.15em] uppercase hover:bg-gold hover:text-ink transition-colors"
-        >
-          Get in Touch
-        </Link>
 
         <div className="md:hidden flex flex-col gap-1.5 cursor-pointer">
           <span className="block w-6 h-px bg-parchment" />

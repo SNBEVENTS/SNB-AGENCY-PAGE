@@ -18,12 +18,13 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "SNB Events | Corporate Event Agency",
+  title: "SNB Events Agency | Corporate Events",
   description:
-    "SNB Events designs, produces, and executes high-end corporate events — offsites, retreats, brand launches, and product activations.",
+    "SNB Events Agency designs, produces, and executes high-end corporate events: offsites, retreats, brand activations, and product launches.",
 };
 
 export default function RootLayout({
@@ -36,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-ink text-parchment">
+      <body className="min-h-full flex flex-col bg-surface text-parchment">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
