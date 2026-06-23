@@ -23,7 +23,7 @@ const services = [
     badge: null,
     desc: "Culture is built in moments. We design experiences that reconnect your people and send them home energised.",
     img: "/team-building.jpg",
-    position: "object-top",
+    position: "object-[center_75%]",
   },
   {
     n: "04",
