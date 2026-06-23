@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,9 +7,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-20">
           <div className="md:col-span-2">
-            <div className="font-heading text-xl text-parchment tracking-[0.2em] uppercase mb-5">
-              SNB Events Agency
-            </div>
+            <Link href="/" className="inline-flex mb-5">
+              <Image
+                src="/logo.png"
+                alt="SNB Event Agency"
+                width={140}
+                height={70}
+                className="h-12 w-auto object-contain mix-blend-multiply"
+              />
+            </Link>
             <p className="text-sm text-muted leading-relaxed max-w-sm mb-8">
               We design, produce, and execute high-end corporate events that drive real business impact. Based in Barcelona, working across Spain and beyond.
             </p>
