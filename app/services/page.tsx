@@ -4,6 +4,7 @@ const services = [
   {
     n: "01",
     title: "Corporate Offsites & Retreats",
+    badge: "DMC Barcelona",
     tagline: "Strategy. Alignment. Impact.",
     description:
       "We design and produce corporate offsites and retreats that go beyond the hotel conference room. Whether you're taking your leadership team off-grid to reset and re-align, or bringing together a global organisation for a company-wide summit, we build events that create the conditions for real strategic work.",
@@ -13,11 +14,13 @@ const services = [
       "Strategic planning offsites",
       "Board & executive retreats",
     ],
-    image: null,
+    image: "/gallery-outdoor.jpg",
+    imagePosition: "object-[center_60%]",
   },
   {
     n: "02",
     title: "Brand Activations",
+    badge: null,
     tagline: "Make the market take notice.",
     description:
       "A great brand launch is a statement. It sets the tone for everything that follows. We create launch experiences that are bold, intentional, and built for impact — from intimate media previews to large-scale consumer activations. A brand event isn't just an event; it's a positioning exercise.",
@@ -28,10 +31,12 @@ const services = [
       "Consumer experiences",
     ],
     image: "/brand-activation.jpg",
+    imagePosition: "object-center",
   },
   {
     n: "03",
     title: "Team Building & Experiences",
+    badge: null,
     tagline: "Invest in your people.",
     description:
       "Culture doesn't build itself — it's built in moments. We create team building events and shared experiences that reconnect people, rebuild momentum, and reinforce what your organisation values. From hands-on activity days to full-programme team experiences, we design environments that bring out the best in your people.",
@@ -42,10 +47,12 @@ const services = [
       "Employee milestone celebrations",
     ],
     image: "/team-building.jpg",
+    imagePosition: "object-top",
   },
   {
     n: "04",
     title: "Corporate & Company Events",
+    badge: null,
     tagline: "From summer parties to end-of-year celebrations.",
     description:
       "Not every event needs to be a landmark moment — but every event deserves to be done well. We help local businesses and growing companies organise standout staff parties, summer socials, and end-of-year celebrations. Whether you're a team of 20 or 200, we handle the planning and logistics so you can show up and enjoy it.",
@@ -55,7 +62,8 @@ const services = [
       "Company socials & away days",
       "Local business events",
     ],
-    image: null,
+    image: "/Hero.jpg",
+    imagePosition: "object-center",
   },
 ];
 
@@ -72,7 +80,7 @@ export default function Services() {
             What We Do
           </h1>
           <p className="text-xl text-muted max-w-2xl leading-relaxed">
-            From concept to completion, we manage every aspect of the events we produce — with no compromises.
+            You tell us what you want — we handle every last detail and make it brilliant.
           </p>
         </div>
       </section>
@@ -83,28 +91,34 @@ export default function Services() {
           {services.map((service) => (
             <div key={service.n} className="py-20 md:py-28">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
-                {/* Left column */}
+                {/* Left column — number, title, tagline, photo */}
                 <div className="md:col-span-4">
-                  <p className="text-[11px] text-gold font-semibold tracking-[0.3em] uppercase mb-6">
+                  <p className="text-[11px] text-gold font-semibold tracking-[0.3em] uppercase mb-4">
                     {service.n}
+                    {service.badge && (
+                      <span className="ml-3 border border-gold/50 px-2 py-0.5 text-[10px]">
+                        {service.badge}
+                      </span>
+                    )}
                   </p>
-                  <h2 className="font-heading text-2xl md:text-4xl text-parchment mb-4 leading-[1.1]">
+                  <h2 className="font-heading text-2xl md:text-3xl text-parchment mb-3 leading-[1.1]">
                     {service.title}
                   </h2>
-                  <p className="text-sm text-muted italic">{service.tagline}</p>
-                </div>
+                  <p className="text-sm text-muted italic mb-8">{service.tagline}</p>
 
-                {/* Right column */}
-                <div className="md:col-span-8">
                   {service.image && (
-                    <div className="overflow-hidden mb-10 h-64 md:h-96">
+                    <div className="overflow-hidden h-52 md:h-64">
                       <img
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover ${service.imagePosition}`}
                       />
                     </div>
                   )}
+                </div>
+
+                {/* Right column — description, details */}
+                <div className="md:col-span-8">
                   <p className="text-muted leading-relaxed mb-10 text-base md:text-lg">
                     {service.description}
                   </p>

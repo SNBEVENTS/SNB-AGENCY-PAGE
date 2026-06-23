@@ -26,22 +26,34 @@ const steps = [
 export default function About() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-40 pb-24 px-6 border-b border-ink-border">
-        <div className="max-w-7xl mx-auto">
+      {/* Hero — with full team photo placeholder */}
+      <section className="pt-40 pb-0 px-6">
+        <div className="max-w-7xl mx-auto mb-12">
           <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-8">
-            About
+            About SNB Events Agency
           </p>
-          <h1 className="font-heading text-[clamp(3rem,7vw,7rem)] text-parchment leading-[0.95] tracking-tight mb-10 max-w-4xl">
-            The Agency<br />Behind the<br /><em>Moment</em>
+          <h1 className="font-heading text-[clamp(3rem,7vw,7rem)] text-parchment leading-[0.95] tracking-tight mb-8 max-w-4xl">
+            We Plan It.<br />We Run It.<br /><em>You Love It.</em>
           </h1>
           <p className="text-xl text-muted max-w-2xl leading-relaxed">
-            SNB Events Agency was built for clients who demand more than logistics — they demand excellence.
+            SNB Events Agency is your full-service corporate events partner in Barcelona. We take everything off your plate so you can focus on showing up and enjoying it.
+          </p>
+        </div>
+
+        {/* Full team photo — placeholder */}
+        <div className="w-full h-[50vh] md:h-[70vh] overflow-hidden">
+          <img
+            src="https://picsum.photos/seed/snb-team-full/1600/900"
+            alt="SNB Events Agency full team — [PLACEHOLDER: add your full team photo here]"
+            className="w-full h-full object-cover object-center"
+          />
+          <p className="text-[10px] text-muted/40 text-center py-1 tracking-wider uppercase bg-ink-raised">
+            Placeholder — add full team photo here
           </p>
         </div>
       </section>
 
-      {/* Story + team photo */}
+      {/* Story */}
       <section className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           <div className="flex flex-col gap-8">
@@ -49,7 +61,7 @@ export default function About() {
               <img
                 src="/team.jpg"
                 alt="SNB Events Agency team"
-                className="w-full h-[480px] md:h-[600px] object-cover object-[center_20%]"
+                className="w-full h-[480px] md:h-[580px] object-cover object-[center_20%]"
               />
             </div>
             <blockquote className="border-l-2 border-gold pl-8">
@@ -68,31 +80,33 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-muted leading-relaxed">
               <p>
-                SNB Events Agency was founded on a simple conviction: that great corporate events
+                SNB Events Agency was founded on a simple conviction: great corporate events
                 don&apos;t happen by accident. They require a team of specialists who understand
                 business, understand people, and are obsessive about craft.
               </p>
               <p>
                 From the earliest conversations with a client to the last guest leaving the room,
-                we are fully committed to every detail. We take time to understand your business
-                objectives, your audience, and what success actually means to you — then we build
-                an experience that delivers it.
+                we are fully committed to every detail. We take time to understand your objectives,
+                your audience, and what success actually means to you — then we build an experience
+                that delivers it.
               </p>
               <p>
                 We work with leading brands, global businesses, and ambitious teams across
-                industries — from technology and finance to luxury and consumer goods. Our client
-                list is built on trust, not transactions.
+                industries. Our client list is built on trust, not transactions.
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-0 border border-ink-border divide-x divide-ink-border">
+            <div className="mt-12 grid grid-cols-2 border border-ink-border">
               {[
                 { n: "10+", label: "Years of experience" },
                 { n: "4", label: "Languages spoken" },
                 { n: "100%", label: "Bespoke events" },
                 { n: "BCN", label: "Based in Barcelona" },
-              ].map((stat) => (
-                <div key={stat.label} className="p-8 even:border-t even:md:border-t-0 first:border-b md:first:border-b-0 last:border-t">
+              ].map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`p-8 ${i % 2 === 0 ? "border-r border-ink-border" : ""} ${i < 2 ? "border-b border-ink-border" : ""}`}
+                >
                   <div className="font-heading text-3xl text-parchment mb-1">{stat.n}</div>
                   <div className="text-[11px] text-muted tracking-[0.15em] uppercase">{stat.label}</div>
                 </div>
@@ -111,17 +125,29 @@ export default function About() {
         />
       </div>
 
-      {/* How we work */}
-      <section className="py-24 md:py-32 px-6 bg-ink-raised border-y border-ink-border">
+      {/* From Brief to Brilliant — with photo */}
+      <section className="py-24 md:py-32 px-6 bg-ink-raised">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
             <div className="md:sticky md:top-32">
               <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-8">
                 How We Work
               </p>
-              <h2 className="font-heading text-3xl md:text-5xl text-parchment leading-[1.1]">
+              <h2 className="font-heading text-3xl md:text-5xl text-parchment leading-[1.1] mb-10">
                 From Brief<br />to Brilliant
               </h2>
+
+              {/* Process photo placeholder */}
+              <div className="overflow-hidden h-56 md:h-72 relative">
+                <img
+                  src="https://picsum.photos/seed/snb-process/800/600"
+                  alt="Event production process — [PLACEHOLDER: add a behind-the-scenes or planning photo here]"
+                  className="w-full h-full object-cover"
+                />
+                <p className="absolute bottom-0 left-0 right-0 text-[10px] text-white/50 text-center py-1 bg-ink/40 tracking-wider uppercase">
+                  Placeholder — add a process or behind-the-scenes photo
+                </p>
+              </div>
             </div>
 
             <div className="divide-y divide-ink-border border-y border-ink-border">
@@ -137,43 +163,6 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-24 md:py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-14">
-            <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-4">
-              Our Approach
-            </p>
-            <h2 className="font-heading text-3xl md:text-5xl text-parchment">
-              What We Stand For
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-border border border-ink-border">
-            {[
-              {
-                title: "Experienced",
-                body: "Our team has delivered high-stakes corporate events for over a decade. We&apos;ve managed the complexity, handled the pivots, and earned the trust of exacting clients across industries.",
-              },
-              {
-                title: "Detail-Obsessed",
-                body: "We lose sleep over the things most agencies don&apos;t notice. The quality of the lighting, the flow of the agenda, the moment a guest walks through the door — the details are the experience.",
-              },
-              {
-                title: "Results-Driven",
-                body: "We begin every project by asking what success looks like. Then we design backwards from that answer. Our events move people — and we measure that in real business outcomes.",
-              },
-            ].map((v) => (
-              <div key={v.title} className="bg-surface p-10 md:p-14">
-                <div className="w-8 h-px bg-gold mb-10" />
-                <h3 className="font-heading text-2xl text-parchment mb-6">{v.title}</h3>
-                <p className="text-muted leading-relaxed">{v.body}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
