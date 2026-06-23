@@ -11,7 +11,7 @@ const EVENT_TYPES = [
 ];
 
 const inputClass =
-  "w-full bg-surface border border-ink-border px-4 py-3.5 text-sm text-parchment placeholder:text-muted focus:outline-none focus:border-gold transition-colors";
+  "w-full bg-[#8c3e26]/50 border border-white/20 px-4 py-3.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -37,14 +37,14 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="py-16 border border-ink-border">
+      <div className="py-16 border border-surface/20">
         <div className="text-center px-10">
-          <div className="w-10 h-px bg-gold mx-auto mb-8" />
-          <h3 className="font-heading text-3xl text-parchment mb-4">
+          <div className="w-10 h-px bg-surface/40 mx-auto mb-8" />
+          <h3 className="font-heading text-3xl text-surface mb-4">
             Thank You
           </h3>
-          <p className="text-muted leading-relaxed">
-            We've received your enquiry and will be in touch within 48 hours.
+          <p className="text-surface/60 leading-relaxed">
+            We&apos;ve received your enquiry and will be in touch within 48 hours.
           </p>
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
+          <label className="block text-[11px] font-semibold text-surface/60 tracking-[0.25em] uppercase mb-3">
             Name
           </label>
           <input
@@ -69,7 +69,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
+          <label className="block text-[11px] font-semibold text-surface/60 tracking-[0.25em] uppercase mb-3">
             Company
           </label>
           <input
@@ -85,7 +85,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
+        <label className="block text-[11px] font-semibold text-surface/60 tracking-[0.25em] uppercase mb-3">
           Email
         </label>
         <input
@@ -100,7 +100,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
+        <label className="block text-[11px] font-semibold text-surface/60 tracking-[0.25em] uppercase mb-3">
           Event Type
         </label>
         <select
@@ -122,7 +122,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
+        <label className="block text-[11px] font-semibold text-surface/60 tracking-[0.25em] uppercase mb-3">
           Event Date
         </label>
         <input
@@ -135,7 +135,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[11px] font-semibold text-muted tracking-[0.25em] uppercase mb-3">
+        <label className="block text-[11px] font-semibold text-surface/60 tracking-[0.25em] uppercase mb-3">
           Message
         </label>
         <textarea
@@ -151,7 +151,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center gap-3 bg-parchment text-surface px-9 py-4 text-[11px] font-semibold tracking-[0.25em] uppercase hover:opacity-80 transition-opacity"
+        className="inline-flex items-center gap-3 bg-surface text-[#8c3e26] px-9 py-4 text-[11px] font-semibold tracking-[0.25em] uppercase hover:opacity-90 transition-opacity"
       >
         Send Enquiry →
       </button>

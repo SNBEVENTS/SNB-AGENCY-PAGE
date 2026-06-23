@@ -3,86 +3,90 @@ import ContactForm from "./ContactForm";
 export default function Contact() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-40 pb-24 px-6 border-b border-ink-border">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-8">
-            Contact
-          </p>
-          <h1 className="font-heading text-[clamp(3rem,7vw,7rem)] text-parchment leading-[0.95] tracking-tight mb-10 max-w-3xl">
-            Let&apos;s Talk
-          </h1>
-          <p className="text-xl text-muted max-w-2xl leading-relaxed">
-            Whether you have a detailed brief or just a spark of an idea, we'd love to hear from you.
-          </p>
+      {/* Hero — split: B&W photo left, contact info right */}
+      <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 pt-16 md:pt-0">
+        {/* Left — B&W photo with text overlay */}
+        <div className="relative overflow-hidden min-h-[55vh] md:min-h-screen">
+          <img
+            src="https://picsum.photos/seed/snb-phone-girl/800/1100"
+            alt="[PLACEHOLDER — add your B&W girl on phone photo here]"
+            className="w-full h-full object-cover grayscale"
+          />
+          <div className="absolute inset-0 bg-ink/50" />
+          <div className="absolute inset-0 flex flex-col justify-end p-10 md:p-16">
+            <p className="text-[11px] font-semibold text-gold tracking-[0.4em] uppercase mb-5">
+              Get In Touch
+            </p>
+            <h1 className="font-heading text-[clamp(3.5rem,8vw,7rem)] text-surface leading-[0.92] tracking-tight">
+              Let&apos;s<br /><em>Talk</em>
+            </h1>
+          </div>
         </div>
-      </section>
 
-      {/* Form + info */}
-      <section className="py-24 md:py-32 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20">
-          {/* Info sidebar */}
-          <div className="space-y-12">
+        {/* Right — contact details on dark background */}
+        <div className="bg-ink px-10 md:px-16 py-20 md:py-0 md:flex md:flex-col md:justify-center">
+          <p className="text-surface/60 leading-relaxed mb-14 max-w-sm">
+            Whether you have a detailed brief or just a spark of an idea, we&apos;d love to hear
+            from you. We respond to every enquiry personally.
+          </p>
+
+          <div className="space-y-10">
             <div>
-              <div className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-5">
+              <p className="text-[11px] font-semibold text-gold tracking-[0.3em] uppercase mb-3">
                 Email
-              </div>
+              </p>
               <a
                 href="mailto:info@strawsnberries.com"
-                className="text-sm text-muted hover:text-parchment transition-colors"
+                className="text-surface hover:text-gold transition-colors"
               >
                 info@strawsnberries.com
               </a>
             </div>
 
             <div>
-              <div className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-5">
-                Based In
-              </div>
-              <p className="text-sm text-muted">Barcelona, Spain</p>
-            </div>
-
-            <div>
-              <div className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-5">
+              <p className="text-[11px] font-semibold text-gold tracking-[0.3em] uppercase mb-3">
                 Phone & WhatsApp
-              </div>
+              </p>
               <a
                 href="https://wa.me/34936096253"
-                className="text-sm text-muted hover:text-parchment transition-colors"
+                className="text-surface hover:text-gold transition-colors"
               >
                 +34 936 096 253
               </a>
             </div>
 
             <div>
-              <div className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-5">
+              <p className="text-[11px] font-semibold text-gold tracking-[0.3em] uppercase mb-3">
+                Based In
+              </p>
+              <p className="text-surface/70">Barcelona, Spain</p>
+            </div>
+
+            <div className="pt-8 border-t border-surface/10">
+              <p className="text-[11px] font-semibold text-gold tracking-[0.3em] uppercase mb-3">
                 What Happens Next
-              </div>
-              <div className="space-y-4 text-sm text-muted leading-relaxed">
-                <p>
-                  We review every enquiry personally and aim to respond within 48 hours.
-                </p>
-                <p>
-                  If your brief is a good fit, we'll arrange a call to learn more about your event and what success looks like for you.
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-ink-border">
-              <div className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-5">
-                Working With Us
-              </div>
-              <div className="space-y-3 text-sm text-muted leading-relaxed">
-                <p>We take on a select number of projects each year.</p>
-                <p>We work exclusively with businesses and brands — not private individuals.</p>
-              </div>
+              </p>
+              <p className="text-surface/60 text-sm leading-relaxed">
+                We review every enquiry personally and aim to respond within 48 hours. If it&apos;s
+                a good fit, we&apos;ll arrange a call to learn more about your event.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Form */}
-          <div className="md:col-span-2">
-            <ContactForm />
+      {/* Form section */}
+      <section className="py-24 md:py-32 px-6 bg-[#b85c3e]">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-14">
+            <p className="text-[11px] font-semibold text-surface/60 tracking-[0.3em] uppercase mb-4">
+              Send Us a Brief
+            </p>
+            <h2 className="font-heading text-3xl md:text-5xl text-surface">
+              Tell Us About Your Event
+            </h2>
           </div>
+          <ContactForm />
         </div>
       </section>
     </>
