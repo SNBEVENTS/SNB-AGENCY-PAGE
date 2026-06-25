@@ -133,16 +133,12 @@ export default function About() {
                 From Brief<br />to Brilliant
               </h2>
 
-              {/* Process photo placeholder */}
-              <div className="overflow-hidden h-56 md:h-72 relative">
+              <div className="overflow-hidden h-56 md:h-72">
                 <img
-                  src="https://picsum.photos/seed/snb-process/800/600"
-                  alt="Event production process — [PLACEHOLDER: add a behind-the-scenes or planning photo here]"
-                  className="w-full h-full object-cover"
+                  src="/cheers.jpg"
+                  alt="Celebration at an SNB Events Agency event"
+                  className="w-full h-full object-cover object-center"
                 />
-                <p className="absolute bottom-0 left-0 right-0 text-[10px] text-white/50 text-center py-1 bg-ink/40 tracking-wider uppercase">
-                  Placeholder — add a process or behind-the-scenes photo
-                </p>
               </div>
             </div>
 
