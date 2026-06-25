@@ -40,16 +40,12 @@ export default function About() {
           </p>
         </div>
 
-        {/* Full team photo — placeholder */}
         <div className="w-full h-[50vh] md:h-[70vh] overflow-hidden">
           <img
-            src="https://picsum.photos/seed/snb-team-full/1600/900"
-            alt="SNB Events Agency full team — [PLACEHOLDER: add your full team photo here]"
+            src="/agency.JPG"
+            alt="SNB Event Agency neon sign"
             className="w-full h-full object-cover object-center"
           />
-          <p className="text-[10px] text-muted/40 text-center py-1 tracking-wider uppercase bg-ink-raised">
-            Placeholder — add full team photo here
-          </p>
         </div>
       </section>
 
