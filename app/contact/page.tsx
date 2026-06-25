@@ -10,9 +10,9 @@ export default function Contact() {
         {/* Left — B&W photo with text overlay */}
         <div className="relative overflow-hidden min-h-[55vh] md:min-h-screen">
           <img
-            src="https://picsum.photos/seed/snb-phone-girl/800/1100"
-            alt="[PLACEHOLDER — add your B&W girl on phone photo here]"
-            className="w-full h-full object-cover grayscale"
+            src="/team-ari.jpg"
+            alt="SNB Event Agency team"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-ink/50" />
           <div className="absolute inset-0 flex flex-col justify-end p-10 md:p-16">
