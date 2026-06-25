@@ -247,14 +247,27 @@ export default function Home() {
             <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-8 text-center">
               Trusted By
             </p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className="h-8 bg-ink-border/60 rounded-sm" />
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-x-8 gap-y-6 items-center justify-items-center">
+              {[
+                "Junior.ai",
+                "Puig",
+                "Preply",
+                "EBS Bartender School",
+                "Truss",
+                "Rituals",
+                "Kodify",
+                "Deel",
+                "Purina",
+                "Havanna",
+              ].map((name) => (
+                <div
+                  key={name}
+                  className="text-[11px] font-semibold text-muted/70 tracking-[0.2em] uppercase text-center"
+                >
+                  {name}
+                </div>
               ))}
             </div>
-            <p className="text-[10px] text-muted/50 text-center mt-4 tracking-wider uppercase">
-              Placeholder — add client logos here
-            </p>
           </div>
         </div>
       </section>
