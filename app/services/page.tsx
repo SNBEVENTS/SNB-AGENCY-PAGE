@@ -70,16 +70,26 @@ const services = [
 export default function Services() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-40 pb-24 px-6 border-b border-ink-border">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-[11px] font-semibold text-muted tracking-[0.3em] uppercase mb-8">
+      {/* Hero — video background */}
+      <section className="relative min-h-screen flex items-end overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video.mov" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-ink/55" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 md:pb-28 w-full">
+          <p className="text-[11px] font-semibold text-surface/60 tracking-[0.3em] uppercase mb-8">
             Services
           </p>
-          <h1 className="font-heading text-[clamp(3rem,7vw,7rem)] text-parchment leading-[0.95] tracking-tight mb-10 max-w-4xl">
+          <h1 className="font-heading text-[clamp(3rem,7vw,7rem)] text-surface leading-[0.95] tracking-tight mb-10 max-w-4xl">
             What We Do
           </h1>
-          <p className="text-xl text-muted max-w-2xl leading-relaxed">
+          <p className="text-xl text-surface/70 max-w-2xl leading-relaxed">
             You tell us what you want — we handle every last detail and make it brilliant.
           </p>
         </div>
