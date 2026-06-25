@@ -47,7 +47,7 @@ const services = [
       "Employee milestone celebrations",
     ],
     image: "/team-building.jpg",
-    imagePosition: "object-top",
+    imagePosition: "object-[center_55%]",
   },
   {
     n: "04",
