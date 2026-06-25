@@ -44,7 +44,7 @@ export default function About() {
           <img
             src="/agency.JPG"
             alt="SNB Event Agency neon sign"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
           />
         </div>
       </section>
