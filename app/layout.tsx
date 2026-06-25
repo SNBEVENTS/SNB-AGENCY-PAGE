@@ -25,6 +25,29 @@ export const metadata: Metadata = {
   title: "SNB Events Agency | Corporate Events",
   description:
     "SNB Events Agency designs, produces, and executes high-end corporate events: offsites, retreats, brand activations, and product launches.",
+  openGraph: {
+    title: "SNB Events Agency | Corporate Events",
+    description:
+      "SNB Events Agency designs, produces, and executes high-end corporate events: offsites, retreats, brand activations, and product launches.",
+    url: "https://snbagency.com",
+    siteName: "SNB Events Agency",
+    images: [
+      {
+        url: "/agency.JPG",
+        width: 1200,
+        height: 630,
+        alt: "SNB Event Agency",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SNB Events Agency | Corporate Events",
+    description:
+      "SNB Events Agency designs, produces, and executes high-end corporate events: offsites, retreats, brand activations, and product launches.",
+    images: ["/agency.JPG"],
+  },
 };
 
 export default function RootLayout({
