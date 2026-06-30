@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   title: "SNB Events Agency | Corporate Events",
   description:
     "SNB Events Agency designs, produces, and executes high-end corporate events: offsites, retreats, brand activations, and product launches.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "SNB Events Agency | Corporate Events",
     description:
