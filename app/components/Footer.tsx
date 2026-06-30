@@ -11,9 +11,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="SNB Event Agency"
-                width={140}
-                height={70}
-                className="h-12 w-auto object-contain mix-blend-multiply"
+                width={280}
+                height={140}
+                className="h-28 w-auto object-contain mix-blend-multiply"
               />
             </Link>
             <p className="text-sm text-muted leading-relaxed max-w-sm mb-8">

@@ -14,9 +14,9 @@ export default function Nav() {
           <Image
             src="/logo.png"
             alt="SNB Event Agency"
-            width={120}
-            height={60}
-            className="h-10 w-auto object-contain mix-blend-multiply"
+            width={240}
+            height={120}
+            className="h-20 w-auto object-contain mix-blend-multiply"
             priority
           />
         </Link>
